@@ -29,7 +29,7 @@ BLUETOOTH_NAME = "Nintendo RVL-WBC-01"
 
 
 class EventProcessor:
-  def __init__(self):
+    def __init__(self):
         self._measured = False
         self.done = False
         self._measureCnt = 0
