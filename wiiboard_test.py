@@ -7,7 +7,7 @@ import sys
 import subprocess
 
 # --------- User Settings ---------
-WEIGHT_SAMPLES = 500
+WEIGHT_SAMPLES = 1000
 # ---------------------------------
 
 # Wiiboard Parameters
@@ -37,7 +37,7 @@ class EventProcessor:
 
     def mass(self, event):
         if self._measureCnt == 1:
-            print "Measuring ..."
+            print "Calculating ..."
         
         if (event.totalWeight > 30):
             self._events[self._measureCnt] = event.totalWeight*2.20462
@@ -51,6 +51,7 @@ class EventProcessor:
                 print str(self._weight) + " lbs"
             if not self._measured:
                 self._measured = True
+                self._measureCnt += 0
 
     @property
     def weight(self):
